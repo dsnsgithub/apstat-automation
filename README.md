@@ -1,6 +1,6 @@
 # AP Statistics Automation - Ti-84 Data Entry
 
-This script automates the data entry process for the TI-84 calculator emulator (CEMU), useful for AP Statistics homework. It reads input from a text file (`input.txt`) and enters the data into the emulator, saving time, eliminating mistakes, and making data entry easier.
+This script automates the data entry process for the TI-84 calculator emulator (CEMU), which is very useful for AP Statistics homework. It reads input from a text file (`input.txt`) and enters the data into the emulator, saving time, eliminating mistakes, and making data entry easier.
 
 ## Prerequisites
 
@@ -61,6 +61,40 @@ Feel free to customize the script by modifying the variables at the beginning of
 
 - `splitChar`: Specify the character used to separate data points in the input file.
 - `regexAdditions`: Specify additional characters to include in the regular expression for cleaning the data.
+
+## Using LinReg.py
+
+1. Run the script as before, only changing the name of the file:
+
+   ```shell
+   python linreg.py
+   ```
+
+2. The script will prompt you to provide inputs for various parameters. The parameters and their default values are as follows:
+
+   - `List #1`: Enter the number of the first list to be used in calculations (default: 1) - L1=1, L2=2, L3=3.
+   - `List #2`: Enter the number of the second list to be used in calculations (default: 2) - L1=1, L2=2, L3=3.
+   - `Store Line`: Enter the line number to store the results (default: 1) - Y1=1, Y2=2, Y3=3.
+   - `Statplot Num`: Enter the number of the stat plot to display the graph (default: 1) - Plot1=1, Plot2=2, Plot3=3.
+
+   You can press Enter for each parameter to accept the default values or enter your own values.
+
+3. The script will start entering data and performing calculations in the CEMU emulator window. It will perform the following steps:
+
+   - Clear all y-vars.
+   - Ensure that the calculator is in stats mode.
+   - Navigate to LinReg(a+bx) calculation.
+   - Choose the specified list numbers for calculations.
+   - Enter the specified store line number for results.
+   - Perform the LinReg calculation.
+   - Wait for a few seconds and prompt you to press Enter to proceed, allowing you to copy down the LinReg information.
+   - Go to the stat plot configuration.
+   - Choose the specified stat plot number.
+   - Select scatterplot mode.
+   - Choose the specified list numbers for the scatterplot.
+   - Enter the zoom mode and view the graph.
+
+4. Follow the prompts and wait for the script to complete its execution.
 
 
 ## Acknowledgments
