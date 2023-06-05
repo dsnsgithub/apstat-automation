@@ -9,7 +9,7 @@ statPlot = int(input("Statplot Num: ") or 1)
 cache = {}
 def clickButton(image, conf=0.7):
     if image not in cache:
-        coords = pyautogui.locateCenterOnScreen(image, confidence=conf, grayscale=True, region=region)
+        coords = pyautogui.locateCenterOnScreen("./images/" + image, confidence=conf, grayscale=True, region=region)
         cache[image] = coords
 
     pyautogui.moveTo(cache[image])

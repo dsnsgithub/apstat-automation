@@ -46,7 +46,7 @@ win32gui.SetForegroundWindow(handle)
 region = win32gui.GetWindowRect(handle)
 
 # Ensures the calculator is in stats mode
-statButtonCoords = pyautogui.locateCenterOnScreen("stat.PNG", confidence=0.7, grayscale=True, region=region)
+statButtonCoords = pyautogui.locateCenterOnScreen("./images/stat.PNG", confidence=0.7, grayscale=True, region=region)
 print(statButtonCoords)
 
 pyautogui.moveTo(statButtonCoords)
