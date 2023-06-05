@@ -1,6 +1,6 @@
 # AP Statistics Automation - Ti-84 Data Entry
 
-This script automates the data entry process for the TI-84 calculator emulator (CEMU) used in AP Statistics homework. It reads input from a text file (`input.txt`) and enters the data into the emulator, saving time and making the data entry task easier.
+This script automates the data entry process for the TI-84 calculator emulator (CEMU), useful for AP Statistics homework. It reads input from a text file (`input.txt`) and enters the data into the emulator, saving time, eliminating mistakes, and making data entry easier.
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ git clone https://github.com/dsnsgithub/apstat-automation
 cd apstat-automation
 ```
 
-2. Place your input data in a text file named `input.txt` in the same directory as the script. This can be easily done by copy-pasting the charts from the AP Statistics homework.
+2. Place your input data in a text file named `input.txt` in the same directory as the script. This can be easily done by copy-pasting the charts from the AP Statistics homework PDF.
 
 3. Open a command prompt or terminal in the script's directory.
 
@@ -35,7 +35,7 @@ cd apstat-automation
    - Go to the cloned repository folder.
    - Enter the /emulator folder.
    - Double-click/open CEmu.exe.
-   - Close any popups. 
+   - Close any extra popups. 
 
 5. Run the script by executing the following command:
 
