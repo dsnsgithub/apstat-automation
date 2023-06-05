@@ -61,3 +61,8 @@ Feel free to customize the script by modifying the variables at the beginning of
 
 - `splitChar`: Specify the character used to separate data points in the input file.
 - `regexAdditions`: Specify additional characters to include in the regular expression for cleaning the data.
+
+
+## Acknowledgments
+
+Special thanks to the creators of [CEmu](https://github.com/CE-Programming/CEmu) for their invaluable contribution in making this project possible.
