@@ -6,10 +6,10 @@ This script automates the data entry process for the TI-84 calculator emulator (
 
 Make sure you have the following dependencies installed before running the script:
 
-- `pyautogui`
-- `pywin32`
-- `opencv-python`
-- `pillow`
+-   `pyautogui`
+-   `pywin32`
+-   `opencv-python`
+-   `pillow`
 
 You can install these dependencies by running the following command:
 
@@ -20,6 +20,7 @@ pip install pyautogui pywin32 opencv-python pillow
 ## Usage
 
 1. Clone this repository
+
 ```shell
 git clone https://github.com/dsnsgithub/apstat-automation
 cd apstat-automation
@@ -37,30 +38,42 @@ cd apstat-automation
    - Double-click/open CEmu.exe.
    - Close any extra popups. 
 
-5. Run the script by executing the following command:
+5. Take pictures of the calculator buttons, and place them in /images
 
-   ```shell
-   python main.py
-   ```
+-   The .png images will most likely not work on your computer, so screenshot each button and replace the files in /images
 
-6. The script will prompt you to choose between entering data by rows (1) or columns (2).
+-   Please screenshot:
+    -   2nd button (2nd.PNG)
+    -   clear button (clear.PNG)
+    -   stat button (stat.PNG)
+    -   vars button (vars.PNG)
+    -   y= button (y=.PNG)
+    -   zoom button (zoom.PNG)
 
-7. After selecting the data entry mode, the script will start entering the data into the CEMU emulator. It will perform the following steps:
+6. Run the script by executing the following command:
 
-   - Clean the input data by removing unwanted characters.
-   - Bring the CEMU window into focus.
-   - Ensure that the calculator is in stats mode.
-   - Clear all lists in the emulator.
-   - Enter the cleaned data into the emulator, one list at a time.
+    ```shell
+    python main.py
+    ```
 
-8. Wait for the script to complete. It will print the entered values on the console for verification.
+7. The script will prompt you to choose between entering data by rows (1) or columns (2).
+
+8. After selecting the data entry mode, the script will start entering the data into the CEMU emulator. It will perform the following steps:
+
+    - Clean the input data by removing unwanted characters.
+    - Bring the CEMU window into focus.
+    - Ensure that the calculator is in stats mode.
+    - Clear all lists in the emulator.
+    - Enter the cleaned data into the emulator, one list at a time.
+
+9. Wait for the script to complete. It will print the entered values on the console for verification.
 
 **Note:** Make sure the CEMU emulator window with the title "CEmu | Calculator" is open and visible on your screen before running the script.
 
 Feel free to customize the script by modifying the variables at the beginning of the script:
 
-- `splitChar`: Specify the character used to separate data points in the input file.
-- `regexAdditions`: Specify additional characters to include in the regular expression for cleaning the data.
+-   `splitChar`: Specify the character used to separate data points in the input file.
+-   `regexAdditions`: Specify additional characters to include in the regular expression for cleaning the data.
 
 ## Using LinReg.py
 

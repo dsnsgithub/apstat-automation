@@ -37,8 +37,8 @@ for value in clean:
     print(value)
 print()
 
-print("Waiting 1 seconds before entering....")
-time.sleep(1)
+print("Waiting 2 seconds before entering....")
+time.sleep(2)
 
 # Bring CEMU window into focus
 handle = win32gui.FindWindow(None, "CEmu | Calculator")
