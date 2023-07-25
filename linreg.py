@@ -7,9 +7,10 @@ yStore = int(input("Store Line: ") or 1)
 statPlot = int(input("Statplot Num: ") or 1)
 
 cache = {}
-def clickButton(image, conf=0.7):
+def clickButton(image, conf=0.9):
     if image not in cache:
         coords = pyautogui.locateCenterOnScreen("./images/" + image, confidence=conf, grayscale=True, region=region)
+        print(coords)
         cache[image] = coords
 
     pyautogui.moveTo(cache[image])
@@ -28,8 +29,21 @@ time.sleep(1)
 
 # Bring CEMU window into focus
 handle = win32gui.FindWindow(None, "CEmu | Calculator")
+oldRegion = win32gui.GetWindowRect(handle) # restore after data input
+
 win32gui.SetForegroundWindow(handle)
+win32gui.MoveWindow(handle, 100, 100, 1000, 1000, True)
+
 region = win32gui.GetWindowRect(handle)
+
+time.sleep(0.2)
+
+# Enable diagnostic mode for better LinReg
+clickButton("mode.PNG")
+for _ in range(10):
+    pyautogui.press("down")
+pyautogui.press("right")
+pyautogui.press("enter")
 
 # Clear all y-vars
 clickButton("y=.PNG")

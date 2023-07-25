@@ -1,11 +1,12 @@
 import pyautogui, time, re, win32gui
-#? pip install pyautogui pywin32 opencv-python pillow
+
+# ? pip install pyautogui pywin32 opencv-python pillow
 
 inputFile = open("input.txt", "r").readlines()
 
 #! Config
 splitChar = " "  # ? change if necessary
-regexAdditions = "-" # ? change if necessary
+regexAdditions = "-"  # ? change if necessary
 
 regex = f"[^0-9\s.{regexAdditions}]"
 
@@ -33,8 +34,12 @@ else:
 
             clean[columnNum].append(num)
 
-for value in clean:
-    print(value)
+for index, value in enumerate(clean):
+    print(f"#{index + 1}:", value)
+    print()
+
+listsWanted = input("Enter the columns/rows you want to enter, seperated by spaces: ").split(" ")
+
 print()
 
 print("Waiting 2 seconds before entering....")
@@ -42,11 +47,19 @@ time.sleep(2)
 
 # Bring CEMU window into focus
 handle = win32gui.FindWindow(None, "CEmu | Calculator")
+oldRegion = win32gui.GetWindowRect(handle)  # restore after data input
+
 win32gui.SetForegroundWindow(handle)
+win32gui.MoveWindow(handle, 100, 100, 1000, 1000, True)
+
 region = win32gui.GetWindowRect(handle)
 
+time.sleep(0.2)
+
 # Ensures the calculator is in stats mode
-statButtonCoords = pyautogui.locateCenterOnScreen("./images/stat.PNG", confidence=0.7, grayscale=True, region=region)
+statButtonCoords = pyautogui.locateCenterOnScreen(
+    "./images/stat.PNG", confidence=0.7, grayscale=True, region=region
+)
 print(statButtonCoords)
 
 pyautogui.moveTo(statButtonCoords)
@@ -62,7 +75,7 @@ for i in range(6):
 pyautogui.press("up")
 for i in range(6):
     pyautogui.press("enter")
-    pyautogui.typewrite("1") # replaces entire field
+    pyautogui.typewrite("1")  # replaces entire field
     pyautogui.press("backspace")
     pyautogui.press("enter")
     pyautogui.press("left")
@@ -70,17 +83,24 @@ for i in range(6):
 
 
 for index, column in enumerate(clean):
-    payload = "{"
-    for num in clean[index]:
-        payload += str(num)
-        payload += ","
-    payload = payload[:-1]  # removes trailing comma
-    payload += "}"
+    if listsWanted.count(str(index + 1)) > 0:
+        payload = "{"
+        for num in clean[index]:
+            payload += str(num)
+            payload += ","
+        payload = payload[:-1]  # removes trailing comma
+        payload += "}"
 
-    pyautogui.typewrite(payload)
+        pyautogui.typewrite(payload)
 
-    # Move to next List
-    pyautogui.press("enter")
-    pyautogui.press("right")
-    pyautogui.press("up")
-    pyautogui.press("enter")
+        # Move to next List
+        pyautogui.press("enter")
+        pyautogui.press("right")
+        pyautogui.press("up")
+        pyautogui.press("enter")
+
+# x = oldRegion[0]
+# y = oldRegion[1]
+# w = oldRegion[2] - x
+# h = oldRegion[3] - y
+# win32gui.MoveWindow(handle, x, y, w, h, True)
