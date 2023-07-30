@@ -32,23 +32,18 @@ cd apstat-automation
 
 4. Run CEmu.exe (emulator of choice)
 
-   - Open File Explorer.
-   - Go to the cloned repository folder.
-   - Enter the /emulator folder.
-   - Double-click/open CEmu.exe.
-   - Close any extra popups. 
+   - Make sure the keypad tab is clicked/visible
 
 5. Take pictures of the calculator buttons, and place them in /images
 
--   The .png images will most likely not work on your computer, so screenshot each button and replace the files in /images
-
--   Please screenshot:
-    -   2nd button (2nd.PNG)
-    -   clear button (clear.PNG)
-    -   stat button (stat.PNG)
-    -   vars button (vars.PNG)
-    -   y= button (y=.PNG)
-    -   zoom button (zoom.PNG)
+   - The .png images will most likely not work on your computer, so screenshot each button and replace the files in /images
+   - Please screenshot:
+      - 2nd button (2nd.PNG)
+      - clear button (clear.PNG)
+      - stat button (stat.PNG)
+      - vars button (vars.PNG)
+      - y= button (y=.PNG)
+      - zoom button (zoom.PNG)
 
 6. Run the script by executing the following command:
 
@@ -72,8 +67,8 @@ cd apstat-automation
 
 Feel free to customize the script by modifying the variables at the beginning of the script:
 
--   `splitChar`: Specify the character used to separate data points in the input file.
--   `regexAdditions`: Specify additional characters to include in the regular expression for cleaning the data.
+- `splitChar`: Specify the character used to separate data points in the input file.
+- `regexAdditions`: Specify additional characters to include in the regular expression for cleaning the data.
 
 ## Using LinReg.py
 
@@ -108,7 +103,6 @@ Feel free to customize the script by modifying the variables at the beginning of
    - Enter the zoom mode and view the graph.
 
 4. Follow the prompts and wait for the script to complete its execution.
-
 
 ## Acknowledgments
 

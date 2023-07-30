@@ -29,7 +29,6 @@ time.sleep(1)
 
 # Bring CEMU window into focus
 handle = win32gui.FindWindow(None, "CEmu | Calculator")
-oldRegion = win32gui.GetWindowRect(handle) # restore after data input
 
 win32gui.SetForegroundWindow(handle)
 win32gui.MoveWindow(handle, 100, 100, 1000, 1000, True)
@@ -86,6 +85,7 @@ input("Press enter to proceed...")
 
 # Bring CEMU window into focus
 win32gui.SetForegroundWindow(handle)
+win32gui.MoveWindow(handle, 100, 100, 1000, 1000, True)
 
 # Go to statplot
 clickButton("2nd.PNG")

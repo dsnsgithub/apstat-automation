@@ -47,7 +47,6 @@ time.sleep(2)
 
 # Bring CEMU window into focus
 handle = win32gui.FindWindow(None, "CEmu | Calculator")
-oldRegion = win32gui.GetWindowRect(handle)  # restore after data input
 
 win32gui.SetForegroundWindow(handle)
 win32gui.MoveWindow(handle, 100, 100, 1000, 1000, True)
@@ -98,9 +97,3 @@ for index, column in enumerate(clean):
         pyautogui.press("right")
         pyautogui.press("up")
         pyautogui.press("enter")
-
-# x = oldRegion[0]
-# y = oldRegion[1]
-# w = oldRegion[2] - x
-# h = oldRegion[3] - y
-# win32gui.MoveWindow(handle, x, y, w, h, True)
